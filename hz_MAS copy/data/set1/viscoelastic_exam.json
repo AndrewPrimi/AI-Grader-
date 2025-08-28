@@ -1,0 +1,43 @@
+{
+  "topic": "What are the strain and stress responses of a Maxwell model under constant stress and constant strain?",
+  "images": [
+    "viscoelastic_exam_1.png"
+  ],
+  "answer": [
+    "**Model Overview:**",
+    "This is a Maxwell viscoelastic model composed of:",
+    "- A spring ($E$)",
+    "- A dashpot ($\\eta$)",
+    "- Another spring ($E$)",
+    "All in series configuration.",
+    "",
+    "**Initial Conditions:**",
+    "- $\\sigma(t = 0) = \\sigma_0$",
+    "- $\\varepsilon(t = 0) = \\varepsilon_0$",
+    "",
+    "**Constitutive Relations:**",
+    "- Dashpot stress: $\\sigma_{\\text{dash}} = \\eta \\frac{d\\varepsilon}{dt}$",
+    "- Spring stress: $\\sigma_{\\text{spring}} = E \\varepsilon$",
+    "",
+    "**Objective:**",
+    "- Determine the strain response under constant stress.",
+    "- Determine the stress response under constant strain.",
+    "",
+    "---",
+    "**Case 1: Constant Stress ($\\sigma = c$)**",
+    "- From the dashpot equation: $\\frac{d\\varepsilon}{dt} = \\frac{\\sigma}{\\eta}$",
+    "- Integrate to find strain:",
+    "$\\varepsilon(t) = \\frac{\\sigma t}{\\eta} + \\varepsilon_0$",
+    "",
+    "**Note:**",
+    "The Maxwell model does not resist deformation well under constant stress; strain grows linearly over time.",
+    "",
+    "---",
+    "**Case 2: Constant Strain ($\\varepsilon = c$)**",
+    "- Stress decays exponentially over time:",
+    "$\\sigma(t) = \\sigma_0 \\exp\\left(-\\frac{E_1 E_2}{\\eta (E_1 + E_2)} t\\right)$",
+    "",
+    "**Conclusion:**",
+    "This model captures basic creep and stress relaxation behavior, but has limitations for permanent deformation modeling."
+  ]
+}

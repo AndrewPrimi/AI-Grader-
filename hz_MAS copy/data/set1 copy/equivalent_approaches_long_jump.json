@@ -1,0 +1,28 @@
+{
+  "topic": "How can both kinematic and energy-based methods be used to calculate the maximum height in a long jump?",
+  "images": ["long_jump_equivalent_approach.png"],
+  "answer": [
+    "**Problem Overview:**",
+    "Analyzing the motion of a long jump using both kinematic and energy-based approaches to find quantities like maximum height.",
+    "",
+    "**Known Values:**",
+    "- Airborne time: 1 s",
+    "- Horizontal distance: 8 m",
+    "- Initial vertical velocity: $v_{0y} = 4.9\\,\\text{m/s}$",
+    "- Maximum height: $h = 1.23\\,\\text{m}$",
+    "",
+    "**Kinematic Approach:**",
+    "- Acceleration: $a_y = -g$",
+    "- Velocity from integration: $v_y = -g(t - t_0) + v_0$",
+    "- Position from velocity: $y(t) = -gt^2 + v_0 t + y_0$",
+    "- Maximum height at midpoint: $y(t_{\\text{mid}}) = h = 1.23\\,\\text{m}$",
+    "",
+    "**Energy-Based Approach:**",
+    "- Work-Energy relation: $a_y\\,dy = v_y\\,dv_y$",
+    "- Integration result: $-\\int g\\,dy = \\int v_y\\,dv_y$",
+    "- Final height from energy: $h = \\frac{v_{0y}^2}{2g} = \\frac{g}{8} = 1.23\\,\\text{m}$",
+    "",
+    "**Note:**",
+    "Energy methods do not require time explicitly, but they are still effective in deriving relationships between velocity and height."
+  ]
+}

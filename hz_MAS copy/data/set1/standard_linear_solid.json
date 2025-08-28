@@ -1,0 +1,39 @@
+{
+  "topic": "How does a standard linear solid model behave under constant stress and constant strain, and what are the governing equations?",
+  "images": [
+    "standard_linear_solid_1.png"
+  ],
+  "answer": [
+    "**Model Summary:**",
+    "The standard linear solid model includes:",
+    "- A spring in series with a parallel spring-dashpot combination.",
+    "- Components: $E_A$ (series spring), $E_B$ (parallel spring), $\\eta$ (dashpot)",
+    "",
+    "**Key Equations:**",
+    "- Stress continuity: $\\sigma = \\sigma_A = \\sigma_B$",
+    "- Total strain: $\\varepsilon = \\varepsilon_A + \\varepsilon_B$",
+    "- Constitutive relation: $\\sigma = E_A \\varepsilon_A = E_B \\varepsilon_B + \\eta \\frac{d\\varepsilon_B}{dt}$",
+    "- Differentiated form: $\\frac{d\\varepsilon}{dt} = \\frac{1}{E_A} \\frac{d\\sigma}{dt} + \\frac{\\sigma}{\\eta} - \\frac{E_B \\varepsilon_B}{\\eta}$",
+    "",
+    "**Strain Substitution:**",
+    "$\\varepsilon_B = \\varepsilon - \\varepsilon_A = \\varepsilon - \\frac{\\sigma}{E_A}$",
+    "",
+    "**Final Combined Equation:**",
+    "$\\frac{\\eta}{E_A + E_B} \\frac{d\\sigma}{dt} + \\sigma = \\left( \\frac{E_A}{E_A + E_B} \\right) \\eta \\frac{d\\varepsilon}{dt} + \\left( \\frac{E_A E_B}{E_A + E_B} \\right) \\varepsilon$",
+    "",
+    "---",
+    "**Case 1: Constant Strain**",
+    "- Condition: $\\varepsilon = \\varepsilon_0, \\quad \\frac{d\\varepsilon}{dt} = 0$",
+    "- Differential equation:",
+    "$\\frac{\\eta}{E_A + E_B} \\frac{d\\sigma}{dt} + \\sigma = \\left( \\frac{E_A E_B}{E_A + E_B} \\right) \\varepsilon_0$",
+    "- Solution:",
+    "$\\sigma(t) = \\frac{E_A^2}{E_A + E_B} e^{-\\frac{(E_A + E_B)t}{\\eta}} + \\frac{E_A E_B}{E_A + E_B}$",
+    "",
+    "**Case 2: Constant Stress**",
+    "- Condition: $\\sigma = \\sigma_0, \\quad \\frac{d\\sigma}{dt} = 0$",
+    "- Differential equation:",
+    "$\\sigma = \\left( \\frac{E_A}{E_A + E_B} \\right) \\eta \\frac{d\\varepsilon}{dt} + \\left( \\frac{E_A E_B}{E_A + E_B} \\right) \\varepsilon$",
+    "- Solution:",
+    "$\\varepsilon(t) = \\left( \\frac{\\sigma_0}{E_A} \\right) e^{-\\frac{E_B t}{\\eta}} + \\left( \\frac{E_A + E_B}{E_A E_B} \\right) \\left(1 - e^{-\\frac{E_B t}{\\eta}}\\right)$"
+  ]
+}

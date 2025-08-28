@@ -1,0 +1,29 @@
+{
+  "topic": "How do you calculate the moment of inertia and radius of gyration for a wooden mallet using its geometry and the parallel axis theorem?",
+  "images": [
+    "mass_moment_inertia_1.png"
+  ],
+  "answer": [
+    "**Description:**",
+    "Calculate the radius of gyration for a mallet. Demonstrates calculating the moment of inertia for multiple segments using the parallel axis theorem.",
+    "",
+    "**Assumptions:**",
+    "- Material: wood",
+    "- Density: 830 kg/m³",
+    "",
+    "**Geometry:**",
+    "- Head: length = 0.2 m, diameter = 0.07 m, mass = 0.639 kg",
+    "- Handle: length = 0.7 m, diameter = 0.03 m, mass = 0.411 kg",
+    "",
+    "**Moment of Inertia Calculations:**",
+    "- $I_1 = \\frac{1}{2} m_1 (3r^2 + l^2) = 0.0023\\,\\text{kg} \\cdot \\text{m}^2$",
+    "- $I_{10} = I_1 + m_1 r^2 = 0.348\\,\\text{kg} \\cdot \\text{m}^2$",
+    "- $I_2 = \\frac{1}{12} m_2 (3r^2 + l^2) = 0.0168\\,\\text{kg} \\cdot \\text{m}^2$",
+    "- $I_{20} = I_2 + m_2 r^2 = 0.0671\\,\\text{kg} \\cdot \\text{m}^2$",
+    "- $I_{\\text{total}} = I_{10} + I_{20} = 0.415\\,\\text{kg} \\cdot \\text{m}^2$",
+    "",
+    "**Radius of Gyration:**",
+    "- Total mass = 1.05 kg",
+    "- $\\rho = \\sqrt{\\frac{I}{m}} = \\sqrt{\\frac{0.415}{1.05}} = 0.629\\,\\text{m}$"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "topic": "How do you determine the distribution of forces on the feet and the maximum briefcase mass before tipping for a standing man holding a briefcase?",
+  "images": [
+    "standing_man_problem.png"
+  ],
+  "answer": [
+    "**Problem Overview:**",
+    "This is a statics problem involving a human standing while holding a briefcase.",
+    "The objective is to calculate:",
+    "a) The distribution of foot forces (F₁, F₂) for a 10 kg briefcase.",
+    "b) The maximum briefcase weight before tipping occurs.",
+    "",
+    "**Known Parameters:**",
+    "- Total body mass: $M = 100\\,\\text{kg}$",
+    "- Height: $H = 2\\,\\text{m}$",
+    "- Briefcase mass: $m = 10\\,\\text{kg}$",
+    "",
+    "**Part A – Force Distribution:**",
+    "Approach: Use moment equilibrium about the feet.",
+    "The center of gravity (CG) of the man is at midline, while the briefcase creates asymmetry.",
+    "",
+    "Calculation for right foot (F₂):",
+    "$F_2 = \\left( \\frac{0.191}{2} \\cdot 100 + \\left(0.129 + \\frac{0.191}{2}\\right) \\cdot 10 \\right) \\cdot \\frac{9.81}{0.191} = 605\\,\\text{N}$",
+    "",
+    "Then left foot (F₁):",
+    "$F_1 = 110 \\cdot 9.81 - 605 = 474\\,\\text{N}$",
+    "",
+    "**Part B – Maximum Briefcase Mass Before Tipping:**",
+    "Tipping occurs when $F_2 = 0$, i.e., all the weight is on the left foot.",
+    "",
+    "Stability condition:",
+    "$\\frac{m \\cdot 0.129H}{M + m} \\leq \\frac{0.191H}{2}$",
+    "",
+    "Solving:",
+    "- Rearranged equation: $m = \\frac{0.191}{2 \\cdot 0.129} (M + m)$",
+    "- Substitute $M = 100$",
+    "- Solving yields: $m = 2.85M = 285\\,\\text{kg}$",
+    "",
+    "**Conclusion:**",
+    "Maximum briefcase mass before tipping: $m_{\\text{max}} = 285\\,\\text{kg}$"
+  ]
+}
