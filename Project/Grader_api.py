@@ -1,37 +1,32 @@
-# grader_api.py
-from fastapi import FastAPI
-from pydantic import BaseModel
-import openai
+from fastapi import FastAPI, UploadFile, File
+from fastapi.responses import JSONResponse
+import nbformat
 
 app = FastAPI()
 
-class AnswerRequest(BaseModel):
-    answer: str
-    question: str
+# This is your grading function placeholder
+def grade_notebook(code_cells):
+    # Example: your model analyzes code_cells and returns a score
+    # Replace this with your actual AI grader
+    total_score = 0
+    for code in code_cells:
+        # Example: give 10 points per cell that contains code
+        if code.strip():
+            total_score += 10
+    return min(total_score, 100)
 
-@app.post("/grade")
-async def grade_answer(req: AnswerRequest):
-    rubric = """
-    Grade the student answer from 0 to 4:
-    - 4: Excellent (complete & correct)
-    - 3: Good (mostly correct, minor issue)
-    - 2: Partial (some correct, missing key parts)
-    - 1: Minimal (little correct)
-    - 0: Incorrect
-    Return JSON: {"score": X, "feedback": "..."}
-    """
-
-    prompt = f"""
-    Question: {req.question}
-    Student Answer: {req.answer}
-    {rubric}
-    """
-
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[{"role": "system", "content": "You are an AI grader."},
-                  {"role": "user", "content": prompt}]
-    )
-
-    # Extract model reply
-    return {"result": response.choices[0].message["content"]}
+@app.post("/submit-notebook/")
+async def submit_notebook(file: UploadFile = File(...)):
+    if not file.filename.endswith(".pdf"):
+        return JSONResponse(content={"error": "Only .pdf files are allowed."}, status_code=400)
+    
+    contents = await file.read()
+    notebook = nbformat.reads(contents.decode("utf-8"), as_version=4)
+    
+    # Extract code cells from the notebook
+    code_cells = [cell['source'] for cell in notebook.cells if cell.cell_type == 'code']
+    
+    # Pass the code to your model for grading
+    score = grade_notebook(code_cells)
+    
+    return {"filename": file.filename, "score": score}
